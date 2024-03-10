@@ -17,7 +17,7 @@ export const Navbar = () => {
 
   return (
     <>
-      Desktop navbar
+      {/* Desktop navbar */}
       <nav className="hidden w-full backdrop-filter backdrop-blur-lg bg-white bg-opacity-30 px-10 py-4 lg:flex sticky top-0 z-10 items-center justify-between border-b border-gray-200">
         <Link className=" hover:text-gray-300" href={"/"}>
           <p className="font-pacifico text-4xl  flex items-center justify-center">
