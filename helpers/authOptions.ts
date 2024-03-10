@@ -71,7 +71,7 @@ export const authOptions: NextAuthOptions = {
             );
           await connectToDatabase();
           await prisma.user.create({ data: { email, name } });
-          return NextResponse.redirect(200,"/")
+          return NextResponse.redirect(200,"/book")
 
         } catch (error) {
           return NextResponse.json(
