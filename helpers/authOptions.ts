@@ -10,42 +10,42 @@ import { NextResponse } from "next/server";
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    // CredentialsProvider({
-    //   name: "Credentials",
-    //   credentials: {
-    //     email: { label: "Email", placeholder: "email" },
-    //     password: { label: "Password", placeholder: "password" },
-    //   },
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: { label: "Email", placeholder: "email" },
+        password: { label: "Password", placeholder: "password" },
+      },
 
-    //   async authorize(credentials) {
-    //     if (!credentials || !credentials.email || !credentials.password) {
-    //       return null;
-    //     }
-    //     try {
-    //       await connectToDatabase();
-    //       const user = await prisma.user.findFirst({
-    //         where: { email: credentials.email },
-    //       });
+      async authorize(credentials) {
+        if (!credentials || !credentials.email || !credentials.password) {
+          return null;
+        }
+        try {
+          await connectToDatabase();
+          const user = await prisma.user.findFirst({
+            where: { email: credentials.email },
+          });
 
-    //       if (!user?.hashedPassword) {
-    //         return null;
-    //       }
-    //       const isPasswordCorrect = await bcrypt.compare(
-    //         credentials.password,
-    //         user.hashedPassword
-    //       );
-    //       if (isPasswordCorrect) {
-    //         return user;
-    //       }
-    //       return null;
-    //     } catch (error) {
-    //       console.log(error);
-    //       return null;
-    //     } finally {
-    //       prisma.$disconnect();
-    //     }
-    //   },
-    // }),
+          if (!user?.hashedPassword) {
+            return null;
+          }
+          const isPasswordCorrect = await bcrypt.compare(
+            credentials.password,
+            user.hashedPassword
+          );
+          if (isPasswordCorrect) {
+            return user;
+          }
+          return null;
+        } catch (error) {
+          console.log(error);
+          return null;
+        } finally {
+          prisma.$disconnect();
+        }
+      },
+    }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
