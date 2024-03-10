@@ -25,7 +25,7 @@ export const Navbar = () => {
           </p>
         </Link>
         <div className="text-gray-900 flex gap-10">
-          <Link className=" hover:text-gray-500" href={"/booknow"}>
+          <Link className=" hover:text-gray-500" href={"/book"}>
              Bookings
           </Link>
         </div>
@@ -129,7 +129,7 @@ export const Navbar = () => {
         {isOpen ? (
           <div className="text-gray-900 sticky z-10 flex flex-col items-center gap-3 m-4">
         
-            <Link className=" hover:text-gray-300" href={"/booknow"}>
+            <Link className=" hover:text-gray-300" href={"/book"}>
                Bookings
             </Link>
           </div>
