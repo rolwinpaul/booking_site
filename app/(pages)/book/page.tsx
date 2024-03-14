@@ -4,12 +4,12 @@ const book = () => {
   return (
     <main className="flex flex-col justify-center items-center h-full ">
       <h1 className="text-4xl">Book a Slot</h1>
-      <form className="bg-blue-50 p-6 rounded-lg mt-10 flex flex-col gap-4" action="">
-        <fieldset className="flex gap-8">
+      <form className="bg-blue-50 p-6 rounded-lg mt-10 flex flex-col gap-4 mx-8" action="">
+        <fieldset className="flex gap-8 items-center justify-center">
           <label htmlFor="timing">Timing</label>
-          <select name="timing" id="timing">
-            <option value="1">9:30-1:30</option>
-            <option value="2">1:30-5:30</option>
+          <select  className="p-2" name="timing" id="timing">
+            <option className="p-2" value="1">9:30-1:30</option>
+            <option className="p-2" value="2">1:30-5:30</option>
           </select>
         </fieldset>
         <Calendar/>

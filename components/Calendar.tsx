@@ -19,7 +19,7 @@ const Calendar: React.FC<CalendarProps> = ({ disabledDates = [] }) => {
           date.getFullYear() === disabledDate.getFullYear() &&
           date.getMonth() === disabledDate.getMonth() &&
           date.getDate() === disabledDate.getDate()
-      ) || date.getDay() === 0 || date.getDay() === 6
+      ) || date.getDay() === 0 || date.getDay() === 7
     );
   };
 
