@@ -83,7 +83,7 @@ export const authOptions: NextAuthOptions = {
         }
       }
       
-      return NextResponse.redirect(200,"/book"); // Do different verification for other providers that don't have `email_verified`
+      return true; // Do different verification for other providers that don't have `email_verified`
     },
 
   },

@@ -1,3 +1,5 @@
+import Calendar from "@/components/Calendar";
+
 const book = () => {
   return (
     <main className="flex flex-col justify-center items-center h-full ">
@@ -10,13 +12,10 @@ const book = () => {
             <option value="2">1:30-5:30</option>
           </select>
         </fieldset>
-        <fieldset className="flex gap-8">
-          <label htmlFor="date">Date</label>
-          <input type="date" />
-        </fieldset>
-
-        <button className="bg-black text-white w-full p-2 rounded-lg mt-6">Book</button>
+        <Calendar/>
+       <button className="bg-black text-white w-full p-2 rounded-lg mt-16">Book</button>
       </form>
+       
     </main>
   );
 };
