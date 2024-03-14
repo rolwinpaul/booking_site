@@ -6,10 +6,7 @@ import { connectToDatabase } from "@/helpers/server-helpers";
 import prisma from "@/prisma";
 import bcrypt from "bcrypt";
 import { NextResponse } from "next/server";
-   const origin =
-        typeof window !== 'undefined' && window.location.origin
-            ? window.location.origin
-            : '';
+  
 export const authOptions: NextAuthOptions = {
   
   providers: [
@@ -61,7 +58,6 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-  callbackURL: "/book",
   callbacks: {
     async signIn({ account, profile }) {
       if (account.provider === "google") {
@@ -87,11 +83,9 @@ export const authOptions: NextAuthOptions = {
         }
       }
       
-      return true; // Do different verification for other providers that don't have `email_verified`
+      return NextResponse.redirect(200,"/book"); // Do different verification for other providers that don't have `email_verified`
     },
-     async redirect({ url, baseUrl }) {
-          return baseUrl
-        }
+
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
