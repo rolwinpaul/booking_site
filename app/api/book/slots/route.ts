@@ -1,9 +1,9 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
+import { NextRequest, NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
-export const GET = async (req:NextApiRequest,res:NextApiResponse) => {
+export const GET = async () => {
   try {
     const availableSlots = await prisma.booking.findMany({
       where: {
@@ -15,10 +15,16 @@ export const GET = async (req:NextApiRequest,res:NextApiResponse) => {
         time: "asc",
       },
     });
-    res.status(200).json(availableSlots);
+    NextResponse.json(
+      { json: availableSlots},
+      { status: 200 }
+    );
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    NextResponse.json(
+      { message: "Internal Server Error" },
+      { status: 500 }
+    );
   } finally {
     await prisma.$disconnect();
   }
