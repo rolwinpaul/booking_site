@@ -1,11 +1,9 @@
-//@ts-nocheck
-
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export const GET = async (req:Request,res:Response) => {
+export const GET = async (req:NextApiRequest,res:NextApiResponse) => {
   try {
     const availableSlots = await prisma.booking.findMany({
       where: {
