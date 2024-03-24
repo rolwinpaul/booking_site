@@ -32,8 +32,8 @@ model Booking {
   time       DateTime
   testNumber Int
   gstNumber  String
-  userId     Int
-  user       User     @relation(fields: [userId], references: [id])
+  email      String
+  user       User     @relation(fields: [email], references: [email])
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
