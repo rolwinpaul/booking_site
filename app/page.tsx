@@ -67,9 +67,8 @@ export default function Home() {
               </th>
               <td className="px-6 py-4">CS IEC 61000-4-6</td>
               <td className="px-6 py-4">
-              Conducted Susceptibility / Conducted
-Immunity ( Range: 0.15 MHz - 80MHz;
-Single Phase AC CDN Max 16A )
+                Conducted Susceptibility / Conducted Immunity ( Range: 0.15 MHz
+                - 80MHz; Single Phase AC CDN Max 16A )
               </td>
             </tr>
             <tr className="bg-white">
@@ -81,10 +80,8 @@ Single Phase AC CDN Max 16A )
               </th>
               <td className="px-6 py-4">PFS IEC 61000-4-11/29</td>
               <td className="px-6 py-4">
-              Power Fail Simulation ( Voltage Dip test,,
-Single Phase AC Max 16A & DC 10A)
-Power Port (both AC & DC)
-
+                Power Fail Simulation ( Voltage Dip test,, Single Phase AC Max
+                16A & DC 10A) Power Port (both AC & DC)
               </td>
             </tr>
             <tr className="bg-white">
@@ -96,9 +93,8 @@ Power Port (both AC & DC)
               </th>
               <td className="px-6 py-4">CE CISPR 11-22</td>
               <td className="px-6 py-4">
-              Conducted Emission (LISN Cabability is
-Max 32 Amp for AC Single / Three Phase
-and DC )
+                Conducted Emission (LISN Cabability is Max 32 Amp for AC Single
+                / Three Phase and DC )
               </td>
             </tr>
             <tr className="bg-white">
@@ -110,8 +106,8 @@ and DC )
               </th>
               <td className="px-6 py-4">RE EN 55022- Class-B</td>
               <td className="px-6 py-4">
-              Radiated Emission 30 MHz - 3 GHz range
-for 3 meter antenna distance to the EUT
+                Radiated Emission 30 MHz - 3 GHz range for 3 meter antenna
+                distance to the EUT
               </td>
             </tr>
             <tr className="bg-white">
@@ -123,8 +119,8 @@ for 3 meter antenna distance to the EUT
               </th>
               <td className="px-6 py-4">RS IEC 61000-4-3</td>
               <td className="px-6 py-4">
-              Radiated Immunity / Susceptibility
-1V/m, 3V/m, 10V/m ( 80- 3000MHz)
+                Radiated Immunity / Susceptibility 1V/m, 3V/m, 10V/m ( 80-
+                3000MHz)
               </td>
             </tr>
           </tbody>
