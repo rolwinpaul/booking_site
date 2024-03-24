@@ -15,13 +15,13 @@ export const GET = async () => {
         time: "asc",
       },
     });
-    NextResponse.json(
+   return NextResponse.json(
       { json: availableSlots},
       { status: 200 }
     );
   } catch (error) {
     console.error(error);
-    NextResponse.json(
+   return NextResponse.json(
       { message: "Internal Server Error" },
       { status: 500 }
     );
