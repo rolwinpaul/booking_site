@@ -4,13 +4,18 @@ import React, { useState, useMemo } from "react";
 
 interface CalendarProps {
   disabledDates?: Date[];
+  onDateSelect: (date: Date) => void;
 }
 
-const Calendar: React.FC<CalendarProps> = ({ disabledDates = [] }) => {
+const Calendar: React.FC<CalendarProps> = ({ disabledDates = [], onDateSelect }) => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [currentMonth, setCurrentMonth] = useState<number>(
     new Date().getMonth()
   );
+  const handleDateClick = (date: Date) => {
+    setSelectedDate(date);
+    onDateSelect(date); // Call the callback function with the selected date
+  };
   const [currentYear, setCurrentYear] = useState<number>(
     new Date().getFullYear()
   );
@@ -69,9 +74,9 @@ const Calendar: React.FC<CalendarProps> = ({ disabledDates = [] }) => {
       days.push(
         <button
           key={day}
-          onClick={() => setSelectedDate(currentDate)}
+          onClick={() => handleDateClick(currentDate)}
           className={`py-2 px-3 text-sm rounded-full focus:outline-none ${
-            isDisabled
+            isDisabled 
               ? "text-gray-400 cursor-not-allowed"
               : selectedDate?.getDate() == day
               ? "text-white bg-black hover:bg-gray-200"
