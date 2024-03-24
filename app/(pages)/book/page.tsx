@@ -55,7 +55,7 @@ const Book = () => {
           </label>
           <select className="p-2 rounded-xl bg-white" name="timing" id="timing">
             {slots.map((slot, index) => (
-              <option key={index} value={slot.date}>
+              <option key={index} value={slot.date.toISOString()}>
                 {slot.slot}
               </option>
             ))}
