@@ -20,6 +20,7 @@ datasource db {
 model User {
   id             Int       @id @default(autoincrement())
   name           String
+  role           String    @default("client")
   email          String    @unique
   image          String?
   hashedPassword String?
@@ -30,6 +31,7 @@ model Booking {
   id         Int      @id @default(autoincrement())
   time       DateTime
   testNumber Int
+  gstNumber  String
   userId     Int
   user       User     @relation(fields: [userId], references: [id])
   createdAt  DateTime @default(now())

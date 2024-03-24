@@ -5,7 +5,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export const GET = async () => {
+export const GET = async (res:Response) => {
   try {
     const availableSlots = await prisma.booking.findMany({
       where: {
