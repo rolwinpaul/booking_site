@@ -85,7 +85,7 @@ const Book = () => {
       if (!response.ok) {
         throw new Error("Failed to book slot");
       }
-
+      alert("Slot booked successfully")
       // Handle success, e.g., display a success message
     } catch (error) {
       console.error("Error booking slot:", error);
